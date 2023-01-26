@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap');
+@import url(/null.css);
+
+.card{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  font-family: 'Roboto Slab', serif;
+  font-size: calc(16px + 19 * (100vw / 1024));
+  line-height: 120%;
+
+  max-width: 80%;
+  margin: 20px auto;
+  padding: 30px 20px;
+
+  border-radius: 20px;
+  background-color: #F1EFE9;
+  box-shadow: 5.57143px 10.0286px 25.6286px rgba(0, 0, 0, 0.25);
+}
+
+@media(max-width: 767px) {
+  .card {
+    font-size: calc(16px + (19 + 19 * 0.7) * ((100vw - 320px) / 1024));
+  }
+}
+
+@media(min-width: 560px){
+  .card{
+    padding: 45px 35px;
+  }
+}
+
+h1{
+  font-weight: bold;
+}
+
+.card_head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close_icon {
+  width: 16px;
+  height: 16px;
+}
+
+.card_text p{
+  margin-bottom: 7%;
+}
+
+.card_text p:last-child{
+  margin-bottom: 0;
+}
+
+.card_text p span{
+  font-weight: bold;
+}
+
+.close_icon img{
+  width: 16px;
+  height: 16px;
+}
+
+.card_img{
+  margin-top: 10%;
+  text-align: center;
+}
+
+.card_img img{
+  max-width: 70%;
+}
+
+.round_img img{
+  border-radius: 50%;
+}
+
+/* Ненужная обертка */
+.unnecessary_cover{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
