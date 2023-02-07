@@ -8,11 +8,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="unnecessary_cover"> <!-- Обертка для демонстрации карточек. Не нужна в проекте -->
+  <div class="buttons">
+    <button class="button dome">?</button>
+    <button class="button stones">?</button>
+    <button class="button croses">?</button>
+    <button class="button renovation">?</button>
+  </div>
+    <div class="unnecessary_cover"> <!-- Обертка для демонстрации карточек. Не нужна в проекте -->
 
     <!-- ОТПЕЧАТОК ПАЛЬЦА -->
-    <div class="card">
+    <!-- <div class="card fingerprint">
       <div class="card_head">
         <h1 class="card_title">ОТПЕЧАТОК ПАЛЬЦА</h1>
         <div class="close_icon">
@@ -24,10 +29,10 @@
       <div class="card_img round_img">
         <img src="img/fingerprint.jpg" alt="Kalozha fingerprint">
       </div>
-    </div>
+    </div> -->
 
     <!-- ТРЕЩИНА ФАСАДА -->
-    <div class="card">
+    <!-- <div class="card ">
       <div class="card_head">
         <h1 class="card_title">ТРЕЩИНА ФАСАДА</h1>
         <div class="close_icon">
@@ -38,10 +43,10 @@
         <p>Появилась в&nbsp;1840&nbsp;году. Одна из&nbsp;причин&nbsp;&mdash; изменившеся русло Немана.</p>
         <p>На&nbsp;противоположном берегу была построена гавань для сплавки леса. Это изменило течение реки, а&nbsp;катастрофа стала лишь делом времени.</p>
       </div>
-    </div>
+    </div> -->
 
     <!-- КАТАСТРОФА 1852 -->
-    <div class="card">
+    <!-- <div class="card">
       <div class="card_head">
         <h1 class="card_title">КАТАСТРОФА 1852 ГОДА</h1>
         <div class="close_icon">
@@ -52,10 +57,10 @@
         <p>Весной 1853 года Неман вышел из&nbsp;берегов и&nbsp;подмыл холм, на&nbsp;котором стоит храм. Результат: северная и&nbsp;часть южной стены обрушились в&nbsp;реку. </p>
         <p>Церковь простояла в&nbsp;руинах более 50&nbsp;лет, пока её&nbsp;не&nbsp;законсервировали, заменив утраченные стены деревянными.</p>
       </div>
-    </div>
+    </div> -->
 
     <!-- ВАЛУНЫ -->
-    <div class="card">
+    <div class="card card_stones">
       <div class="card_head">
         <h1 class="card_title">ВАЛУНЫ</h1>
         <div class="close_icon">
@@ -70,7 +75,7 @@
     </div>
 
     <!-- КРЕСТЫ ИЗ МАЙОЛИКИ -->
-    <div class="card">
+    <div class="card card_croses">
       <div class="card_head">
         <h1 class="card_title">КРЕСТЫ ИЗ МАЙОЛИКИ</h1>
         <div class="close_icon">
@@ -87,7 +92,7 @@
     </div>
 
     <!-- СЛЕДЫ РЕМОНТА -->
-    <div class="card">
+    <div class="card card_renovation">
       <div class="card_head">
         <h1 class="card_title">СЛЕДЫ РЕМОНТА</h1>
         <div class="close_icon">
@@ -102,7 +107,7 @@
     </div>
 
     <!-- БАРАБАННЫЙ КУПОЛ -->
-    <div class="card">
+    <div class="card card_dome">
       <div class="card_head">
         <h1 class="card_title">БАРАБАННЫЙ КУПОЛ</h1>
         <div class="close_icon">
@@ -117,7 +122,7 @@
     </div>
 
     <!-- ШАТРОВАЯ КРЫША -->
-    <div class="card">
+    <!-- <div class="card">
       <div class="card_head">
         <h1 class="card_title">ШАТРОВАЯ КРЫША</h1>
         <div class="close_icon">
@@ -131,9 +136,42 @@
       <div class="card_img">
         <img src="img/engraving.jpg" alt="Kalozha engraving">
       </div>
-    </div>
+    </div> -->
 
   </div>
+<script>
+  const card = document.querySelectorAll('.card');
+  const card_dome = document.querySelector('.card_dome');
+  const card_stones = document.querySelector('.card_stones');
+  const card_croses = document.querySelector('.card_croses');
+  const card_renovation = document.querySelector('.card_renovation');
 
+  const button = document.querySelectorAll('.button');
+  const close_icon = document.querySelectorAll('.close_icon');
+
+  button.forEach(element => {
+    element.addEventListener('click', () => {
+      if(element.classList.contains('dome')){
+        card_dome.classList.toggle('card_active');
+      } else if(element.classList.contains('stones')){
+        card_stones.classList.toggle('card_active');
+      } else if(element.classList.contains('croses')){
+        card_croses.classList.toggle('card_active');
+      } else if (element.classList.contains('renovation')){
+        card_renovation.classList.toggle('card_active');
+      }
+    })
+  })
+
+  close_icon.forEach(element => {
+    element.addEventListener('click', () =>{
+      card.forEach(element => {
+        element.classList.remove('card_active')
+    })
+  })
+  })
+
+</script>
 </body>
+
 </html>

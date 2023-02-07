@@ -39,8 +39,24 @@ img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
 /*--------------------*/
 
-.card{
+.buttons{
   display: flex;
+}
+
+button{
+  display: block;
+  margin: 20px auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 17px;
+  color: white;
+  background-color: black;
+  text-align: center;
+}
+
+.card{
+  display: none;
   flex-direction: column;
   gap: 24px;
 
@@ -67,6 +83,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
   .card{
     padding: 45px 35px;
   }
+}
+
+.card_active{
+  display: flex;
 }
 
 h1{
@@ -120,3 +140,4 @@ h1{
   flex-wrap: wrap;
   gap: 30px;
 }
+
